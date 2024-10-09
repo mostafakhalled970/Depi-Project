@@ -10,7 +10,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'echo Running tests...'
+                script {
+                    // Run the tests
+                    sh 'pytest tests/'  // Adjust based on your testing framework and directory
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Add deployment steps here
             }
         }
     }
